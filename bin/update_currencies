@@ -28,5 +28,5 @@ return function (array $context) {
 
     $currencies = $serializer->decode($currenciesXML, 'xml');
 
-    var_dump($currencies);
+    foreach ($currencies as )
 };
