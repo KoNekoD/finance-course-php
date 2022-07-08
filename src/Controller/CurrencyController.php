@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Item;
+use App\Entity\Currency;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,7 +15,7 @@ class CurrencyController extends AbstractController
     {
         $entityManager = $doctrine->getManager();
 
-        $currencies = $entityManager->getRepository(Item::class)->findAll();
+        $currencies = $entityManager->getRepository(Currency::class)->findAll();
 
         return $this->render(
             'currency/show.html.twig',

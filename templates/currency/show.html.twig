@@ -1,10 +1,31 @@
+{% extends 'base.html.twig' %}
 
-{# ... #}
+{% block body %}
+<div class="w-full flex flex-col items-center bg-blue-100">
+    <div class="font-semibold text-3xl my-2">Курсы валют:</div>
+    {% for currency in currencyList %}
+    <div class="w-2/5 py-2 flex justify-between border-b border-gray-800">
+        <div class="flex items-center font-sans">
+            <div class="font-bold px-2">{{ currency.id }}</div>
+            <div class="text-xl">{{ currency.name }}</div>
+        </div>
+        <div class="flex items-center justify-end">
+            <span class="font-mono text-xl">{{ currency.rate }}</span>
+            <svg x="0px" y="0px" class="w-4 text-red-500"
+                 viewBox="0 0 511.883 511.883" style="enable-background:new 0 0 511.883 511.883;" xml:space="preserve">
+                <path style="fill:currentColor;" d="M287.934,0h-0.031H117.309l0,0l0,0c-5.889,0-10.669,4.779-10.669,10.669v287.934H74.647
+                   	c-5.889,0-10.661,4.766-10.661,10.654s4.772,10.67,10.661,10.67h31.993v181.286c0,5.89,4.78,10.67,10.669,10.67
+                   	c5.89,0,10.662-4.78,10.662-10.67V319.926h16.855h143.107c88.354,0,159.964-71.625,159.964-159.964S376.289,0,287.934,0z
+                   	 M385.974,257.987c-12.747,12.747-27.588,22.745-44.084,29.728c-17.09,7.217-35.242,10.888-53.956,10.888H144.827h-16.855V21.323
+                   	h159.932h0.25l0,0c18.651,0.031,36.726,3.702,53.737,10.888c16.496,6.982,31.337,16.98,44.084,29.728
+                   	c12.731,12.731,22.729,27.557,29.712,44.068c7.218,17.074,10.872,35.227,10.872,53.956c0,18.73-3.654,36.882-10.872,53.956
+                   	C408.703,230.431,398.706,245.255,385.974,257.987z"/>
+                <path style="fill:currentColor;" d="M309.273,362.587H74.647c-5.889,0-10.661,4.765-10.661,10.654s4.772,10.67,10.661,10.67h234.626
+                   	c5.873,0,10.654-4.78,10.654-10.67S315.146,362.587,309.273,362.587z"/>
+            </svg>
+        </div>
+    </div>
 
-{% for currency in currencyList %}
-    <h1>
-        currency.name
-    </h1>
-
-    <p>{{ post.excerpt }}</p>
 {% endfor %}
+</div>
+{% endblock %}
