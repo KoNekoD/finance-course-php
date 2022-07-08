@@ -17,7 +17,7 @@ class ApiCurrencyController extends AbstractController
      * @param GET['page']
      * @return Response
      */
-    public function getList(int $page = 1,Request $request) : string
+    public function getList(int $page = 1,Request $request) : Response
     {
         $page = $request->query->get('page');
 
@@ -26,7 +26,7 @@ class ApiCurrencyController extends AbstractController
         $jsonEncoder = new jsonEncoder();
         $serializer = new Serializer([$normalizer], [$jsonEncoder]);
 
-        return $serializer->serialize($normalizer, 'json');
+        return [];
     }
 
     /**
