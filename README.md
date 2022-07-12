@@ -1,1 +1,2 @@
-https://php.budgegeria.de/frevnyvmre2
+1. migrate
+2. php bin/console app:refresh-currencies
