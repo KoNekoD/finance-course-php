@@ -7,14 +7,14 @@ app_currency_show:
   controller: App\Controller\CurrencyController::showCurrencies
 
 app_currencies:
-  path: /currencies
+  path: /currencies/{page}
   controller: App\Controller\ApiCurrencyController::getList
   defaults: { page: 1}
   requirements:
     page: \d+
 
 app_currency:
-  path: /currency
+  path: /currency/{id}
   controller: App\Controller\ApiCurrencyController::getItem
   requirements:
-    page: \string+
+    id: \S+
